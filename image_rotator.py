@@ -13,3 +13,5 @@ rotated = im.rotate(90)
 
 # guarda la imagen girada
 rotated.save('rotated.png')
+
+print("Imagen girada y guardada como rotated.png")

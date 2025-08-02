@@ -1,17 +1,30 @@
 # image_rotator.py
 
-from PIL import Image  # importa el módulo Image de la librería PIL
+from PIL import Image
+import argparse
 
-# carga una imagen llamada 'tripleten_logo.jpeg'.
-im = Image.open('tripleten_logo.jpeg')
+# inicializa el analizador sintáctico
+parser = argparse.ArgumentParser()
 
-# obtén el tamaño de la imagen mediante el atributo .size y muéstralo
-print(im.size)
+# agrega argumentos con sus nombres correspondientes
+parser.add_argument('input_file')
+parser.add_argument('output_file')
+parser.add_argument('--angle', '-a', type=int, default=90)
+# observa que a continuación agregamos el indicador --info (o simplemente -i)
+parser.add_argument('-i', '--info', action='store_true')
 
-# gira la imagen 90 grados en sentido contrario a las agujas del reloj
-rotated = im.rotate(90)
+# analiza los argumentos
+args = parser.parse_args()
 
-# guarda la imagen girada
-rotated.save('rotated.png')
+# carga una imagen del argumento input_file 
+im = Image.open(args.input_file)
 
-print("Imagen girada y guardada como rotated.png")
+# muestra el tamaño de la imagen solo si el indicador --info está establecido en True
+if args.info:
+    print('dimensiones de la imagen de entrada:', im.size)
+
+# gira la imagen en un ángulo proporcionado como argumento
+rotated = im.rotate(args.angle)
+
+# guarda la imagen girada usando la ruta de salida de un argumento output_file
+rotated.save(args.output_file)

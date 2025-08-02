@@ -1,2 +1,10 @@
-stoy feliz de hacer mi primera edici髇! # my-new-repo
-A Repository for a Screenshot
+# Explorador de Datos de Veh铆culos
+
+Esta aplicaci贸n web interactiva, desarrollada con Streamlit, permite explorar un conjunto de datos de anuncios de venta de coches.  
+
+Las Funcionalidades son:
+
+Histograma del od贸metro: muestra la distribuci贸n del kilometraje de los veh铆culos.
+Gr谩fico de dispersi贸n: visualiza la relaci贸n entre el precio y el kilometraje.
+
+

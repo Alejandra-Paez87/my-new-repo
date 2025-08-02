@@ -1,7 +1,8 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-car_data = pd.read_csv(r"C:\Users\gapa2\Documents\my-new-repo\vehicles_us.csv")  
+car_data = pd.read_csv("vehicles_us.csv")
+
 st.header('Explorador de Datos de Vehículos')
 
 build_histogram = st.checkbox('Construir un histograma')
@@ -26,4 +27,5 @@ if disp_button: # al hacer clic en el botón
      
          # mostrar un gráfico Plotly interactivo
          st.plotly_chart(fig, use_container_width=True)
+
 
